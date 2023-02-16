@@ -6,4 +6,4 @@ workflows:
     jobs:
       - cypress/run:
           command: npm install -g n && n 16.0.0 && node -v
-          yarn: true
+          #yarn: true
