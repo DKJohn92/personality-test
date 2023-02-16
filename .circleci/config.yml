@@ -4,8 +4,10 @@ orbs:
 workflows:
   build:
     jobs:
+      - react/install:
+        build: npm install && npm start
       - cypress/install:
-          build: "npm run build" # run a custom app build step
+          build: npm run build
       - cypress/run:
           requires:
             - cypress/install
