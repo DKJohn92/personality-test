@@ -1,15 +1,16 @@
 version: 2.1
 orbs:
+  node: circleci/node
   cypress: cypress-io/cypress@2
 workflows:
   build:
     jobs:
       build:
         docker:
-          - image: cimg/node:16.0.0
-    steps:
-      - checkout
-      - run: node --version
+          - image: cimg/node:19.6.0
+        steps:
+          - checkout
+          - run: node --version
       - cypress/install:
           install-command: yarn install --frozen-lockfile --ignore-engines
       - cypress/run:
