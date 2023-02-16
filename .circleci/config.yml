@@ -4,7 +4,5 @@ orbs:
 workflows:
   build:
     jobs:
-      - npm/install:
-        command: npm install
       - cypress/run:
-          command: npx cypress run --headless --component
+          command: npm install && npx cypress run --headless --component
