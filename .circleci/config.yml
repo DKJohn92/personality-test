@@ -14,8 +14,7 @@ workflows:
       - cypress/run:
           store_artifacts: true
           yarn: true
-          start: yarn install && yarn dev
-          wait-on: "http://localhost:3000"
+          start: yarn install && yarn cypress run --headless --component
           no-workspace: true
           requires:
             - cypress/install
