@@ -5,7 +5,7 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          build: npm run build
+          build: npm install && npm start
       - cypress/run:
           requires:
             - cypress/install
