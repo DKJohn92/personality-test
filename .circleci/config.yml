@@ -1,12 +1,12 @@
 version: 2.1
 orbs:
+  node: circleci/node@5.1.0
   cypress: cypress-io/cypress@2
 workflows:
   build:
     jobs:
       - cypress/install:
           install-command: yarn install --frozen-lockfile --ignore-engines
-          node-version: "16.0.0"
       - cypress/run:
           store_artifacts: true
           yarn: true
