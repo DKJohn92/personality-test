@@ -1,0 +1,29 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@2
+executors:
+  with-chrome:
+    resource_class: small
+    docker:
+      - image: "cypress/browsers:node14.19.0-chrome100-ff99-edge"
+workflows:
+  build:
+    jobs:
+      - cypress/install:
+          install-command: yarn install --frozen-lockfile --ignore-engines
+      - cypress/run:
+          store_artifacts: true
+          yarn: true
+          start: yarn install && yarn start
+          wait-on: "http://localhost:3000"
+          no-workspace: true
+          requires:
+            - cypress/install
+          executor: with-chrome
+          browser: chrome
+          post-steps:
+            - run: ls
+            - store_test_results:
+                path: cypress/downloads
+            - store_artifacts:
+                path: cypress/downloads
