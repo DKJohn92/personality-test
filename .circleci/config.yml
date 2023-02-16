@@ -13,5 +13,3 @@ workflows:
           no-workspace: true
           requires:
             - cypress/install
-          executor: with-chrome
-          browser: chrome
