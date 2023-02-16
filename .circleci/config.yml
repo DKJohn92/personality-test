@@ -5,8 +5,12 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          build: npm install && npm start
+          build: "npm run build" # run a custom app build step
       - cypress/run:
           requires:
             - cypress/install
-          command: npm install && npx cypress run --headless --component
+          record: true # record results with Cypress Cloud
+          parallel: true # split all specs across machines
+          parallelism: 4 # use 4 CircleCI machines to finish quickly
+          group: "all tests" # name this group "all tests" on the dashboard
+          start: "npm start" # start server before running tests
