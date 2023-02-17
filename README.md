@@ -1,6 +1,8 @@
 # Simple personality test app
 
-bootstraped with create-react-app and cypress
+bootstraped with create-react-app, tailwind and cypress
+
+## Note the open PR as an example PR
 
 ## Available Scripts
 
@@ -14,7 +16,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### `npx cypress open`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In order to test the two example e2e tests with the cypress GUI
