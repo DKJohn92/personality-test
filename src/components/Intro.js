@@ -9,6 +9,7 @@ const Intro = ({ onButtonClick }) => {
       </main>
       <div className="flex justify-center py-32">
         <button
+          data-cy="start"
           onClick={onButtonClick}
           className="border-2 border-[#009999] rounded-md p-4"
         >

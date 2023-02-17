@@ -31,6 +31,7 @@ const QuestionsAndResult = () => {
                       return (
                         <div
                           key={index}
+                          data-cy={`answer-${index}`}
                           onClick={() => onAnswerClick(answers.indicator)}
                         >
                           <Answer answer={answers.answer} />
