@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Intro from "./components/Intro";
-import Questions from "./components/Questions";
+import Questions from "./components/QuestionsAndResult";
 // Idea -> Safe the Introvert and Extrovert Answer in an Array and decide on Result depending on the score of Intro or Extrovert answers
 const App = () => {
   const [quizStarted, setQuizStarted] = useState(false);

@@ -83,4 +83,25 @@ export const QuestionsAndAnswers = {
       },
     ],
   },
+  question5: {
+    question: "Do you feel exhausted after long social gatherings?",
+    answers: [
+      {
+        answer: "No",
+        indicator: 1,
+      },
+      {
+        answer: "Yes",
+        indicator: 0,
+      },
+      {
+        answer: "Never",
+        indicator: 1,
+      },
+      {
+        answer: "Sometimes",
+        indicator: 0,
+      },
+    ],
+  },
 };

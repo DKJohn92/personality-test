@@ -3,7 +3,7 @@ import { QuestionsAndAnswers } from "../Mockdata/question-answer";
 import Answer from "./Answer";
 import Question from "./Question";
 
-const Questions = () => {
+const QuestionsAndResult = () => {
   const [isActive, setIsActive] = useState(0);
   const [introvert, setIntrovert] = useState(0);
   const [extrovert, setExtrovert] = useState(0);
@@ -45,15 +45,24 @@ const Questions = () => {
         );
       })}
       {Object.values(QuestionsAndAnswers).length === isActive && (
-        <div className="flex justify-center text-center py-30">
-          <p className="text-2xl font-bold underline">
-            You're most likely an{" "}
-            {extrovert > introvert ? "Extrovert🚀" : "Introvert📚"}
-          </p>
-        </div>
+        <>
+          <div className="flex justify-center text-center py-30">
+            <p className="text-2xl font-bold underline">
+              {`You're most likely an ${
+                extrovert > introvert ? "Extrovert🚀" : "Introvert📚"
+              }`}
+              .
+            </p>
+          </div>
+          <div className="flex justify-center text-center py-4">
+            <p>
+              {`Your score is extrovert: ${extrovert} and introvert: ${introvert}`}
+            </p>
+          </div>
+        </>
       )}
     </div>
   );
 };
 
-export default Questions;
+export default QuestionsAndResult;
